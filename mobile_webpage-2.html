@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Mobile Webpage</title>
+  <style>
+    /* 기본 스타일 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    main h2 {
+      font-size: 20px;
+    }
+
+    button {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* 모바일 최적화 */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 20px;
+      }
+
+      main h2 {
+        font-size: 18px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mobile Webpage</h1>
+  </header>
+
+  <main>
+    <h2>Welcome to the Mobile Site</h2>
+    <p>This page is optimized for mobile devices.</p>
+    <button onclick="alert('Hello!')">Click Me</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Mobile Webpage</p>
+  </footer>
+</body>
+</html>
