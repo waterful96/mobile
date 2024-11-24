@@ -127,7 +127,7 @@
   <div class="modal-overlay" id="modalOverlay" onclick="hideModal()"></div>
   <div class="modal" id="modal">
     <p>HELLO,<br>SW<br>MAESTRO!</p>
-    <button onclick="hideModal()">OK</button>
+    <button onclick="redirectToPage()">OK</button>
   </div>
 
   <script>
@@ -142,6 +142,12 @@
       document.getElementById('modal').style.display = 'none';
       document.getElementById('modalOverlay').style.display = 'none';
     }
+
+    // 다른 페이지로 리디렉션
+    function redirectToPage() {
+      window.location.href = "https://enc1.waveon.me"; // 이동할 URL
+    }
   </script>
 </body>
 </html>
+
