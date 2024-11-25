@@ -6,9 +6,10 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>mobile webpage</title>
+  <meta name="theme-color" content="#007bff">
+  <link rel="manifest" href="/manifest.json">
+  <title>Mobile Webpage</title>
   <style>
-    /* 기본 스타일 */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -64,9 +65,8 @@
       width: 100%;
     }
 
-    /* 모달 스타일 */
     .modal {
-      display: none; /* 기본적으로 숨김 */
+      display: none;
       position: fixed;
       top: 50%;
       left: 50%;
@@ -80,7 +80,7 @@
     }
 
     .modal-overlay {
-      display: none; /* 기본적으로 숨김 */
+      display: none;
       position: fixed;
       top: 0;
       left: 0;
@@ -123,7 +123,6 @@
     <p>&copy; ENC COMMUNICATIONS</p>
   </footer>
 
-  <!-- 모달 및 오버레이 -->
   <div class="modal-overlay" id="modalOverlay" onclick="hideModal()"></div>
   <div class="modal" id="modal">
     <p>HELLO,<br>SW<br>MAESTRO!</p>
@@ -131,23 +130,19 @@
   </div>
 
   <script>
-    // 모달 표시
     function showModal() {
       document.getElementById('modal').style.display = 'block';
       document.getElementById('modalOverlay').style.display = 'block';
     }
 
-    // 모달 숨기기
     function hideModal() {
       document.getElementById('modal').style.display = 'none';
       document.getElementById('modalOverlay').style.display = 'none';
     }
 
-    // 다른 페이지로 리디렉션
     function redirectToPage() {
-      window.location.href = "https://enc1.waveon.me"; // 이동할 URL
+      window.location.href = "https://enc1.waveon.me";
     }
   </script>
 </body>
 </html>
-
