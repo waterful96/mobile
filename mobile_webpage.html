@@ -130,6 +130,11 @@
   </div>
 
   <script>
+    if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(() => console.log('Service Worker Registered'))
+    .catch((error) => console.log('Service Worker Registration Failed', error));
+}
     function showModal() {
       document.getElementById('modal').style.display = 'block';
       document.getElementById('modalOverlay').style.display = 'block';
