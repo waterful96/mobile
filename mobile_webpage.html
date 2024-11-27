@@ -6,10 +6,9 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="theme-color" content="#007bff">
-  <link rel="manifest" href="/manifest.json">
-  <title>Mobile Webpage</title>
+  <title>mobile webpage</title>
   <style>
+    /* 기본 스타일 */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -49,6 +48,29 @@
       border-radius: 5px;
       font-size: 16px;
       cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+    }
+
+    button:active::before {
+      width: 200%;
+      height: 200%;
+      opacity: 0;
+      transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
     }
 
     button:hover {
@@ -65,8 +87,9 @@
       width: 100%;
     }
 
+    /* 모달 스타일 */
     .modal {
-      display: none;
+      display: none; /* 기본적으로 숨김 */
       position: fixed;
       top: 50%;
       left: 50%;
@@ -80,7 +103,7 @@
     }
 
     .modal-overlay {
-      display: none;
+      display: none; /* 기본적으로 숨김 */
       position: fixed;
       top: 0;
       left: 0;
@@ -123,6 +146,7 @@
     <p>&copy; ENC COMMUNICATIONS</p>
   </footer>
 
+  <!-- 모달 및 오버레이 -->
   <div class="modal-overlay" id="modalOverlay" onclick="hideModal()"></div>
   <div class="modal" id="modal">
     <p>HELLO,<br>SW<br>MAESTRO!</p>
@@ -130,23 +154,21 @@
   </div>
 
   <script>
-    if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-    .then(() => console.log('Service Worker Registered'))
-    .catch((error) => console.log('Service Worker Registration Failed', error));
-}
+    // 모달 표시
     function showModal() {
       document.getElementById('modal').style.display = 'block';
       document.getElementById('modalOverlay').style.display = 'block';
     }
 
+    // 모달 숨기기
     function hideModal() {
       document.getElementById('modal').style.display = 'none';
       document.getElementById('modalOverlay').style.display = 'none';
     }
 
+    // 다른 페이지로 리디렉션
     function redirectToPage() {
-      window.location.href = "https://enc1.waveon.me";
+      window.location.href = "https://enc1.waveon.me"; // 이동할 URL
     }
   </script>
 </body>
