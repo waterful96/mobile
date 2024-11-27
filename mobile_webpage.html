@@ -52,7 +52,8 @@
       overflow: hidden;
     }
 
-    button::before {
+    /* 애니메이션 효과 추가 */
+    button::after {
       content: '';
       position: absolute;
       top: 50%;
@@ -63,14 +64,13 @@
       border-radius: 50%;
       transform: translate(-50%, -50%);
       opacity: 0;
-      transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+      transition: width 0.4s ease-out, height 0.4s ease-out, opacity 0.8s ease-out;
     }
 
-    button:active::before {
-      width: 200%;
-      height: 200%;
+    button:active::after {
+      width: 300%;
+      height: 300%;
       opacity: 0;
-      transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
     }
 
     button:hover {
